@@ -3,24 +3,20 @@ package com.payroll.data.model;
 import com.sun.istack.NotNull;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data // lombok for getters and setters
 public class Employee {
 
-    @NotNull
-    @NotBlank
+    @Column(nullable = false)
     private String firstName;
 
-    @NotNull
-    @NotBlank
+    @Column(nullable = false)
     private String lastName;
 
+    @Column(nullable = false)
     private String role;
 
     @Id
